@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 
-This program implements simulates a particle moving in 3D
- space using a double-intergrator kinematic model
+Implementation of classical double-integrator kinematics for a particle in 3D Cartesian space.
 
 A simple PD controller is used to track a moving target
 
@@ -16,6 +15,7 @@ Created on Sat May  8 13:48:10 2021
 
 #%% Import stuff
 # --------------
+
 import numpy as np
 import matplotlib.pyplot as plt
 import mpl_toolkits.mplot3d.axes3d as p3
@@ -50,7 +50,8 @@ states_all[0,:] = state                             # store initial state
 
 
 #%% Define the agent dynamics
-# -------------------------
+# ---------------------------
+
 def dynamics(state, t, inputs):
     
     state_dot = np.zeros(state.shape[0])
@@ -119,7 +120,6 @@ def update(i):
 
 ani = animation.FuncAnimation(fig, update, np.arange(1, len(states_all)),
     interval=15, blit=False)
-
 
 ani.save('animation.gif', writer=writer)
 plt.show()
