@@ -121,7 +121,7 @@ ani = animation.FuncAnimation(fig, update, np.arange(1, len(states_all)),
     interval=15, blit=False)
 
 
-#ani.save('animation.gif', writer=writer)
-#plt.show()
+ani.save('animation.gif', writer=writer)
+plt.show()
 
 
